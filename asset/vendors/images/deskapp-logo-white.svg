@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="256.633"
+   height="55"
+   version="1.1"
+   id="svg14"
+   sodipodi:docname="deskapp-logo-white.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata20">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs18" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     id="namedview16"
+     showgrid="false"
+     inkscape:zoom="1.3209525"
+     inkscape:cx="128.3165"
+     inkscape:cy="27.5"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg14" />
+  <g
+     data-name="029-blend"
+     id="g10">
+    <path
+       data-name="Path 78"
+       d="M25.58 27.609H1.705A1.716 1.716 0 010 25.883V1.725A1.716 1.716 0 011.705 0H25.58a1.716 1.716 0 011.705 1.725v24.158a1.716 1.716 0 01-1.705 1.726zm0 0"
+       fill="#0051bd"
+       id="path2" />
+    <path
+       data-name="Path 79"
+       d="M35.234 39.746H19.121a4.84 4.84 0 01-4.834-4.834V18.799a4.84 4.84 0 014.834-4.834h16.113a4.84 4.84 0 014.834 4.834v16.113a4.84 4.84 0 01-4.834 4.834zm0 0"
+       fill="#00eccf"
+       id="path4" />
+    <path
+       data-name="Path 80"
+       d="M35.234 13.965h-7.949v25.781h7.949a4.84 4.84 0 004.834-4.834V18.799a4.84 4.84 0 00-4.834-4.834zm0 0"
+       fill="#00cab1"
+       id="path6" />
+    <path
+       data-name="Path 81"
+       d="M42.11 55a12.891 12.891 0 1112.891-12.891A12.905 12.905 0 0142.11 55zm0 0"
+       fill="#d11372"
+       id="path8" />
+  </g>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:extra-condensed;font-size:50.5321579px;line-height:1.25;font-family:Algerian;-inkscape-font-specification:'Algerian Extra-Condensed';letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.26330388;"
+     x="76.998123"
+     y="39.002354"
+     id="text3766"
+     transform="scale(0.85880765,1.1644051)"><tspan
+       sodipodi:role="line"
+       id="tspan3764"
+       x="76.998123"
+       y="39.002354"
+       style="font-style:italic;font-variant:normal;font-weight:600;font-stretch:normal;font-size:41.11886978px;font-family:'Lucida Fax';-inkscape-font-specification:'Lucida Fax Semi-Bold Italic';stroke-width:1.26330388;fill:#ffffff;">LTI Admin</tspan></text>
+</svg>
