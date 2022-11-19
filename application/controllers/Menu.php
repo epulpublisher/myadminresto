@@ -28,7 +28,7 @@ class Menu extends CI_Controller
 			'numeric' => 'Yang anda masukan bukan angka'
 		]);
 		//konfigurasi sebelum gambar diupload
-		$config['upload_path'] = './asset/img/upload/';
+		$config['upload_path'] = './assetss/img/upload/';
 		$config['allowed_types'] = 'jpg|png|jpeg';
 		$config['max_size'] = '3000';
 		$config['max_width'] = '1024';
@@ -95,7 +95,7 @@ class Menu extends CI_Controller
 		]);
 
 		//konfigurasi sebelum gambar diupload
-		$config['upload_path'] = './asset/img/upload/';
+		$config['upload_path'] = './assets/img/upload/';
 		$config['allowed_types'] = 'jpg|png|jpeg';
 		$config['max_size'] = '3000';
 		$config['max_width'] = '1024';
@@ -114,7 +114,7 @@ class Menu extends CI_Controller
 		} else {
 			if ($this->upload->do_upload('image')) {
 				$image = $this->upload->data();
-				unlink('./asset/img/upload/' . $this->input->post('old_pict', TRUE));
+				unlink('./assets/img/upload/' . $this->input->post('old_pict', TRUE));
 				$gambar = $image['file_name'];
 			} else {
 				$gambar = $this->input->post('old_pict', TRUE);

@@ -54,3 +54,4 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['api/menu'] = 'api/MenuApi/index';
+$route['api/menu/id/(:any)'] = 'api/MenuApi/MenuById/$1';

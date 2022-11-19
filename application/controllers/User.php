@@ -36,7 +36,7 @@ class User extends CI_Controller
 			'required' => 'Email tidak Boleh Kosong'
 		]);
 		//konfigurasi sebelum gambar diupload
-		$config['upload_path'] = './asset/img/profile/';
+		$config['upload_path'] = './assets/img/profile/';
 		$config['allowed_types'] = 'jpg|png|jpeg';
 		$config['max_size'] = '3000';
 		$config['max_width'] = '1024';
@@ -54,7 +54,7 @@ class User extends CI_Controller
 		} else {
 			if ($this->upload->do_upload('image')) {
 				$image = $this->upload->data();
-				unlink('./asset/img/upload/' . $this->input->post('image_old', TRUE));
+				unlink('./assets/img/upload/' . $this->input->post('image_old', TRUE));
 				$gambar = $image['file_name'];
 			} else {
 				$gambar = $this->input->post('image_old', TRUE);
