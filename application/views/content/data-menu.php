@@ -59,7 +59,7 @@
     								<td>
     									<picture>
     										<source srcset="" type="image/svg+xml">
-    										<img src="<?= base_url('asset/img/upload/') . $a['image']; ?>" width="100" height="100" alt="...">
+    										<img src="<?= base_url('assets/img/upload/') . $a['image']; ?>" width="100" height="100" alt="...">
     									</picture>
     								</td>
     								<td>

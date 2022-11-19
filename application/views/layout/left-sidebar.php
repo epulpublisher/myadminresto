@@ -1,8 +1,8 @@
 <div class="left-side-bar ">
 	<div class="brand-logo">
 		<a href="index.html">
-			<img alt="Responsive image" style="width:110px;height:50px;" src="<?= base_url() ?>asset/vendors/images/lti-logo.png" alt="" class="dark-logo" />
-			<img alt="Responsive image" style="width:110px;height:50px;" src="<?= base_url() ?>asset/vendors/images/lti-logo.png" alt="" class="light-logo" />
+			<img alt="Responsive image" style="width:110px;height:50px;" src="<?= base_url() ?>assets/vendors/images/lti-logo.png" alt="" class="dark-logo" />
+			<img alt="Responsive image" style="width:110px;height:50px;" src="<?= base_url() ?>assets/vendors/images/lti-logo.png" alt="" class="light-logo" />
 		</a>
 		<div class="close-sidebar" data-toggle="left-sidebar-close">
 			<i class="ion-close-round"></i>

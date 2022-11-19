@@ -14,7 +14,7 @@
 				<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 mb-30">
 					<div class="pd-20 card-box height-100-p">
 						<div class="profile-photo">
-							<img src="<?= base_url('asset/img/profile/') . $user['image']; ?>" alt="" class="avatar-photo" />
+							<img src="<?= base_url('assets/img/profile/') . $user['image']; ?>" alt="" class="avatar-photo" />
 						</div>
 						<h5 class="text-center h5 mb-0"><?= $user['nama']; ?></h5>
 						<div class="profile-info">

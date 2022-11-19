@@ -7,9 +7,9 @@
 	<title>Admin Resto | <?= $judul; ?></title>
 
 	<!-- Site favicon -->
-	<link rel="apple-touch-icon" sizes="180x180" href="<?= base_url() ?>/asset/vendors/images/apple-touch-icon.png" />
-	<link rel="icon" type="image/png" sizes="32x32" href="<?= base_url() ?>/asset/vendors/images/favicon-32x32.png" />
-	<link rel="icon" type="image/png" sizes="16x16" href="<?= base_url() ?>/asset/vendors/images/favicon-16x16.png" />
+	<link rel="apple-touch-icon" sizes="180x180" href="<?= base_url() ?>/assets/vendors/images/apple-touch-icon.png" />
+	<link rel="icon" type="image/png" sizes="32x32" href="<?= base_url() ?>/assets/vendors/images/favicon-32x32.png" />
+	<link rel="icon" type="image/png" sizes="16x16" href="<?= base_url() ?>/assets/vendors/images/favicon-16x16.png" />
 
 	<!-- Mobile Specific Metas -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -17,11 +17,11 @@
 	<!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 	<!-- CSS -->
-	<link rel="stylesheet" type="text/css" href="<?= base_url() ?>/asset/vendors/styles/core.css" />
-	<link rel="stylesheet" type="text/css" href="<?= base_url() ?>/asset/vendors/styles/icon-font.min.css" />
-	<link rel="stylesheet" type="text/css" href="<?= base_url() ?>/asset/src/plugins/datatables/css/dataTables.bootstrap4.min.css" />
-	<link rel="stylesheet" type="text/css" href="<?= base_url() ?>/asset/src/plugins/datatables/css/responsive.bootstrap4.min.css" />
-	<link rel="stylesheet" type="text/css" href="<?= base_url() ?>/asset/vendors/styles/style.css" />
+	<link rel="stylesheet" type="text/css" href="<?= base_url() ?>/assets/vendors/styles/core.css" />
+	<link rel="stylesheet" type="text/css" href="<?= base_url() ?>/assets/vendors/styles/icon-font.min.css" />
+	<link rel="stylesheet" type="text/css" href="<?= base_url() ?>/assets/src/plugins/datatables/css/dataTables.bootstrap4.min.css" />
+	<link rel="stylesheet" type="text/css" href="<?= base_url() ?>/assets/src/plugins/datatables/css/responsive.bootstrap4.min.css" />
+	<link rel="stylesheet" type="text/css" href="<?= base_url() ?>/assets/vendors/styles/style.css" />
 </head>
 
 <body>
@@ -41,7 +41,7 @@
 				<div class="dropdown">
 					<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
 						<span class="user-icon">
-							<img src="<?= base_url('asset/img/profile/') . $user['image']; ?>" alt="" />
+							<img src="<?= base_url('assets/img/profile/') . $user['image']; ?>" alt="" />
 						</span>
 						<span class="user-name"><?= $user['nama']; ?></span>
 					</a>

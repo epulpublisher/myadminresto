@@ -82,7 +82,7 @@
 										<input type="hidden" name="old_pict" id="old_pict" value="<?= $b['image']; ?>">
 										<picture>
 											<source srcset="" type="image/svg+xml">
-											<img src="<?= base_url('asset/img/upload/') . $b['image']; ?>" class="img-thumbnail" alt="...">
+											<img src="<?= base_url('assets/img/upload/') . $b['image']; ?>" class="img-thumbnail" alt="...">
 										</picture>
 									<?php } ?>
 									<br>
