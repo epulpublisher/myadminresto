@@ -50,43 +50,50 @@
 							<br>
 						</div>
 						<div class="login-title">
-							<h2 class="text-center text-dark"><b>Sign Up To Admin Resto</b></h2>
+							<h2 class="text-center text-dark"><b>Daftar ke Admin Resto</b></h2>
 						</div>
 						<?= $this->session->flashdata('pesan'); ?>
 						<form action="<?= base_url('autentifikasi/registrasi'); ?>" method="post">
 							<div class="mb-3">
 								<center>
-									<h6><label class="text-dark"><b><i>Full Name</i></b></label></h6>
+									<h6><label class="text-dark"><b><i>Nama Lengkap</i></b></label></h6>
 								</center>
 								<input type="text" autocomplete="off" autocorrect="off" name="nama" id="nama" class="form-control form-control-user bg-transparent border border-dark" value="<?= set_value('nama') ?>" required>
 								<?= form_error('nama', '<small class="text-danger pl-3">', '</small>'); ?>
 							</div>
 							<div class="mb-3">
 								<center>
-									<h6><label class="text-dark"><b><i>Email Address</i></b></label></h6>
+									<h6><label class="text-dark"><b><i>NIP</i></b></label></h6>
+								</center>
+								<input type="text" autocomplete="off" autocorrect="off" name="nip" id="nip" class="form-control form-control-user bg-transparent border border-dark" value="<?= set_value('nip') ?>" required>
+								<?= form_error('nama', '<small class="text-danger pl-3">', '</small>'); ?>
+							</div>
+							<div class="mb-3">
+								<center>
+									<h6><label class="text-dark"><b><i>Alamat Email</i></b></label></h6>
 								</center>
 								<input type="text" autocomplete="off" autocorrect="off" name="email" id="email" class="form-control form-control-user bg-transparent border border-dark" value="<?= set_value('email') ?>" required>
 								<?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
 							</div>
 							<div class="mb-3">
 								<center>
-									<h6><label class="text-dark"><b><i>Password</i></b></label></h6>
+									<h6><label class="text-dark"><b><i>Kata Sandi</i></b></label></h6>
 								</center>
 								<input type="password" autocomplete="off" autocorrect="off" name="password1" id="password1" class="form-control form-control-user bg-transparent border border-dark" required>
 								<?= form_error('password1', '<small class="text-danger pl-3">', '</small>'); ?>
 							</div>
 							<div class="mb-3">
 								<center>
-									<h6><label class="text-dark"><b><i>Password Confirmation</i></b></label></h6>
+									<h6><label class="text-dark"><b><i>Konfirmasi Kata Sandi</i></b></label></h6>
 								</center>
 								<input type="password" autocomplete="off" autocorrect="off" name="password2" id="password2" class="form-control form-control-user bg-transparent border border-dark" required>
 								<?= form_error('password2', '<small class="text-danger pl-3">', '</small>'); ?>
 							</div>
-							<center><button type="submit" class="btn btn-outline-dark">Sign Up</button></center>
+							<center><button type="submit" class="btn btn-outline-dark">Daftar</button></center>
 						</form>
 						<hr>
 						<div class="text-center">
-							Already have an account?<a class="small" href="<?= base_url('autentifikasi'); ?>"> Sign In</a>
+							Sudah Punya Akun ?<a class="small" href="<?= base_url('autentifikasi'); ?>"> Masuk</a>
 						</div>
 						<div class="mb-1">
 							<div class="center">

@@ -10,7 +10,7 @@ class Home extends CI_Controller
 	{
 		$data = [
 			'judul' => "Katalog Buku",
-			'buku' => $this->ModelBuku->getBuku()->result(),
+			'buku' => $this->ModelMenu->getBuku()->result(),
 		];
 
 		//jika sudah login dan jika belum login
@@ -33,7 +33,7 @@ class Home extends CI_Controller
 	public function detailBuku()
 	{
 		$id = $this->uri->segment(3);
-		$buku = $this->ModelBuku->joinKategoriBuku(['buku.id' => $id])->result();
+		$buku = $this->ModelMenu->joinKategoriBuku(['buku.id' => $id])->result();
 		$data['user'] = "Pengunjung";
 		$data['title'] = "Detail Buku";
 		foreach ($buku as $fields) {

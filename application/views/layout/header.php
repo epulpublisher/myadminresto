@@ -41,14 +41,13 @@
 				<div class="dropdown">
 					<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
 						<span class="user-icon">
-							<img src="<?= base_url('assets/img/profile/') . $user['image']; ?>" alt="" />
+							<img src="<?= base_url('asset/img/profile/') . $user['image']; ?>" alt="" />
 						</span>
 						<span class="user-name"><?= $user['nama']; ?></span>
 					</a>
 					<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-						<a class="dropdown-item" href="<?= base_url('user'); ?>"><i class="dw dw-user1"></i> Profile</a>
-						<a class="dropdown-item" href="faq.html"><i class="dw dw-help"></i> Help</a>
-						<a class="dropdown-item" href="<?= base_url('autentifikasi/logout'); ?>"><i class="dw dw-logout"></i> Log Out</a>
+						<a class="dropdown-item" href="<?= base_url('user'); ?>"><i class="dw dw-user1"></i> Profil</a>
+						<a class="dropdown-item" href="<?= base_url('autentifikasi/logout'); ?>"><i class="dw dw-logout"></i> Keluar</a>
 					</div>
 				</div>
 			</div>

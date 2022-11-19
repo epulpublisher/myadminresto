@@ -66,7 +66,7 @@ class Member extends CI_Controller
 		if ($this->form_validation->run() == false) {
 			$data = [
 				'judul' => "Katalog Buku",
-				'buku' => $this->ModelBuku->getBuku()->result(),
+				'buku' => $this->ModelMenu->getBuku()->result(),
 			];
 			$data['user'] = 'Pengunjung';
 			$this->load->view('templates/templates-user/header', $data);

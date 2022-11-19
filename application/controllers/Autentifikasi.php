@@ -30,28 +30,19 @@ class Autentifikasi extends CI_Controller
 	{
 		$email = htmlspecialchars($this->input->post('email', true));
 		$password = $this->input->post('password', true);
-
 		$user = $this->ModelUser->cekData(['email' => $email])->row_array();
-
 		//jika usernya ada
 		if ($user) {
 			//jika user sudah aktif
-			if ($user['is_active'] == 1) {
-				//cek password
-				if (password_verify($password, $user['password'])) {
-					$data = [
-						'email' => $user['email'],
-						'role_id' => $user['role_id']
-					];
-
-					$this->session->set_userdata($data);
-					redirect('admin');
-				} else {
-					$this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-message" role="alert">Password salah!!</div>');
-					redirect('autentifikasi');
-				}
+			//cek password
+			if (password_verify($password, $user['password'])) {
+				$data = [
+					'id' => $user['id'],
+				];
+				$this->session->set_userdata($data);
+				redirect('admin');
 			} else {
-				$this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-message" role="alert">User belum diaktifasi!!</div>');
+				$this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-message" role="alert">Password salah!!</div>');
 				redirect('autentifikasi');
 			}
 		} else {
@@ -69,6 +60,9 @@ class Autentifikasi extends CI_Controller
 		//bahasa sendiri yaitu 'Nama Belum diisi'
 		$this->form_validation->set_rules('nama', 'Nama Lengkap', 'required', [
 			'required' => 'Nama Belum diis!!'
+		]);
+		$this->form_validation->set_rules('nip', 'NIP', 'required', [
+			'required' => 'NIP Belum diis!!'
 		]);
 		//membuat rule untuk inputan email agar tidak boleh kosong, tidak ada spasi, format email harus valid
 		//dan email belum pernah dipakai sama user lain dengan membuat pesan error dengan bahasa sendiri 
@@ -100,12 +94,10 @@ class Autentifikasi extends CI_Controller
 			$email = $this->input->post('email', true);
 			$data = [
 				'nama' => htmlspecialchars($this->input->post('nama', true)),
+				'nip' => htmlspecialchars($this->input->post('nip', true)),
 				'email' => htmlspecialchars($email),
 				'image' => 'default.jpg',
 				'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
-				'role_id' => 2,
-				'is_active' => 1,
-				'tanggal_input' => time()
 			];
 
 			$this->ModelUser->simpanData($data); //menggunakan model

@@ -10,8 +10,8 @@ class Laporan extends CI_Controller
 	{
 		$data['judul'] = 'Laporan Data Buku';
 		$data['user'] = $this->ModelUser->cekData(['email' => $this->session->userdata('email')])->row_array();
-		$data['buku'] = $this->ModelBuku->getBuku()->result_array();
-		$data['kategori'] = $this->ModelBuku->getKategori()->result_array();
+		$data['buku'] = $this->ModelMenu->getBuku()->result_array();
+		$data['kategori'] = $this->ModelMenu->getKategori()->result_array();
 		$this->load->view('templates/header', $data);
 		$this->load->view('templates/sidebar', $data);
 		$this->load->view('templates/topbar', $data);
@@ -20,8 +20,8 @@ class Laporan extends CI_Controller
 	}
 	public function cetak_laporan_buku()
 	{
-		$data['buku'] = $this->ModelBuku->getBuku()->result_array();
-		$data['kategori'] = $this->ModelBuku->getKategori()->result_array();
+		$data['buku'] = $this->ModelMenu->getBuku()->result_array();
+		$data['kategori'] = $this->ModelMenu->getKategori()->result_array();
 
 		$this->load->view('buku/laporan_print_buku', $data);
 	}
@@ -44,7 +44,7 @@ class Laporan extends CI_Controller
 	}
 	public function laporan_buku_pdf()
 	{
-		$data['buku'] = $this->ModelBuku->getBuku()->result_array();
+		$data['buku'] = $this->ModelMenu->getBuku()->result_array();
 		// $this->load->library('dompdf_gen');
 		$sroot = $_SERVER['DOCUMENT_ROOT'];
 		include $sroot . "/pustaka-booking/application/third_party/dompdf/autoload.inc.php";
@@ -80,7 +80,7 @@ class Laporan extends CI_Controller
 	}
 	public function export_excel()
 	{
-		$data = array('title' => 'Laporan Buku', 'buku' => $this->ModelBuku->getBuku()->result_array());
+		$data = array('title' => 'Laporan Buku', 'buku' => $this->ModelMenu->getBuku()->result_array());
 		$this->load->view('buku/export_excel_buku', $data);
 	}
 	public function export_excel_anggota()

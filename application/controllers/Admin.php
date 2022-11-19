@@ -7,19 +7,27 @@ class Admin extends CI_Controller
 	{
 		parent::__construct();
 		cek_login();
-		cek_user();
 	}
 
 	public function index()
 	{
 		$data['judul'] = 'Dashboard';
-		$data['user'] = $this->ModelUser->cekData(['email' => $this->session->userdata('email')])->row_array();
-		$data['anggota'] = $this->ModelUser->getUserLimit()->result_array();
-		$data['buku'] = $this->ModelBuku->getLimitBuku()->result_array();
+		$data['user'] = $this->ModelUser->cekData(['id' => $this->session->userdata('id')])->row_array();
 		$this->load->view('layout/header', $data);
 		$this->load->view('layout/left-sidebar', $data);
 		$this->load->view('layout/right-sidebar', $data);
-		$this->load->view('content/dashboard', $data);
+		$this->load->view('content/data-order', $data);
+		$this->load->view('layout/footer');
+	}
+
+	public function menu()
+	{
+		$data['judul'] = 'Dashboard';
+		$data['user'] = $this->ModelUser->cekData(['id' => $this->session->userdata('id')])->row_array();
+		$this->load->view('layout/header', $data);
+		$this->load->view('layout/left-sidebar', $data);
+		$this->load->view('layout/right-sidebar', $data);
+		$this->load->view('content/data-menu', $data);
 		$this->load->view('layout/footer');
 	}
 }

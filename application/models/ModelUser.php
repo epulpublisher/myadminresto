@@ -30,12 +30,8 @@ class ModelUser extends CI_Model
 		$this->db->where($where);
 		return $this->db->get();
 	}
-
-	public function getUserLimit()
+	public function updateUser($data = null, $where = null)
 	{
-		$this->db->select('*');
-		$this->db->from('user');
-		$this->db->limit(10, 0);
-		return $this->db->get();
+		$this->db->update('user', $data, $where);
 	}
 }

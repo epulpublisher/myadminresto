@@ -50,29 +50,29 @@
 							<br>
 						</div>
 						<div class="login-title">
-							<h2 class="text-center text-dark"><b>Sign In To Admin Resto</b></h2>
+							<h2 class="text-center text-dark"><b>Masuk ke Admin Resto</b></h2>
 						</div>
 						<?= $this->session->flashdata('pesan'); ?>
 						<form action="<?= base_url('autentifikasi'); ?>" method="post">
 							<div class="mb-3">
 								<center>
-									<h6><label class="text-dark"><b><i>Email</i></b></label></h6>
+									<h6><label class="text-dark"><b><i>Alamat Email</i></b></label></h6>
 								</center>
 								<input type="text" autocomplete="off" autocorrect="off" name="email" id="email" class="form-control form-control-user bg-transparent border border-dark" value="<?= set_value('email') ?>" required>
 								<?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
 							</div>
 							<div class="mb-3">
 								<center>
-									<h6><label class="text-dark"><b><i>Password</i></b></label></h6>
+									<h6><label class="text-dark"><b><i>Kata Sandi</i></b></label></h6>
 								</center>
 								<input type="password" autocomplete="off" autocorrect="off" name="password" id="password" class="form-control form-control-user bg-transparent border border-dark" required>
 								<?= form_error('password', '<small class="text-danger pl-3">', '</small>'); ?>
 							</div>
-							<center><button type="submit" class="btn btn-outline-dark">Sign In</button></center>
+							<center><button type="submit" class="btn btn-outline-dark">Masuk</button></center>
 						</form>
 						<hr>
 						<div class="text-center">
-							Not a member?<a class="small" href="<?= base_url('autentifikasi/registrasi'); ?>"> Sign Up</a>
+							Tidak Punya Akun?<a class="small" href="<?= base_url('autentifikasi/registrasi'); ?>"> Daftar</a>
 						</div>
 						<div class="mb-1">
 							<div class="center">
