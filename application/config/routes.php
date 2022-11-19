@@ -53,6 +53,10 @@ $route['default_controller'] = 'Autentifikasi';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+# Menu API
 $route['api/menu'] = 'api/MenuApi/index';
 $route['api/menu/id/(:any)'] = 'api/MenuApi/MenuById/$1';
 $route['api/menu/promo'] = 'api/MenuApi/MenuPromo';
+
+#User Member API
+$route['api/member/id/(:any)'] = 'api/UserMemberApi/MemberById/$1';
