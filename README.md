@@ -2,10 +2,10 @@
 Web Admin dan API 
 
 # API
-@ Menu\
+@ Menu \
 Get data menu all http://localhost/myadminresto/api/menu \
 Get data menu by id http://localhost/myadminresto/api/menu/id/ \
-Get data menu promo http://localhost/myadminresto/api/menu/promo \
+Get data menu promo http://localhost/myadminresto/api/menu/promo 
 
 
 
