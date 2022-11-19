@@ -24,4 +24,10 @@ class MenuApi extends RestController
 		$resultmenu = $menu->get_menu_byid($id);
 		$this->response($resultmenu, 200);
 	}
+	public function MenuPromo_get()
+	{
+		$menu = new ModelMenu;
+		$resultmenu = $menu->get_menu_promo();
+		$this->response($resultmenu, 200);
+	}
 }

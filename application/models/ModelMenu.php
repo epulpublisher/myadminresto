@@ -11,9 +11,17 @@ class ModelMenu extends CI_Model
 
 	public function get_menu_byid($id)
 	{
-		$this->db->where('id', $id);
+		$this->db->where('promo', $id);
 		$query = $this->db->get('menu');
 		return $query->row();
+	}
+
+	public function get_menu_promo()
+	{
+		$promo = "Ya";
+		$this->db->where('promo', $promo);
+		$query = $this->db->get('menu');
+		return $query->result();
 	}
 
 	public function menuWhere($where)
