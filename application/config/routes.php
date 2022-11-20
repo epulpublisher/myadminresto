@@ -60,3 +60,5 @@ $route['api/menu/promo'] = 'api/MenuApi/MenuPromo';
 
 #User Member API
 $route['api/member/id/(:any)'] = 'api/UserMemberApi/MemberById/$1';
+$route['api/member/create'] = 'api/UserMemberApi/Create';
+$route['api/member/login'] = 'api/UserMemberApi/Login';
