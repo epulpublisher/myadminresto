@@ -53,14 +53,10 @@ class UserMemberApi extends RestController
 		$email = htmlspecialchars($this->post('email'));
 		$password = $this->input->post('password', true);
 		$user_member = $member->cekData(['email' => $email])->row_array();
-		$log = $member->check_login($email);
-		$data = $log->row();
-		$ok = "ok";
-		$y = "eror";
 		if (($member->cekData(['email' => $email])->num_rows() > 0) && (password_verify($password, $user_member['password']))) {
 			$this->response($user_member, RestController::HTTP_OK);
 		} else {
-			$this->response($y, RestController::HTTP_UNAUTHORIZED);
+			$this->response(null, RestController::HTTP_UNAUTHORIZED);
 		}
 	}
 }

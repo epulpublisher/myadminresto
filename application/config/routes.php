@@ -57,8 +57,20 @@ $route['translate_uri_dashes'] = FALSE;
 $route['api/menu'] = 'api/MenuApi/index';
 $route['api/menu/id/(:any)'] = 'api/MenuApi/MenuById/$1';
 $route['api/menu/promo'] = 'api/MenuApi/MenuPromo';
+$route['api/menu/makanan'] = 'api/MenuApi/MenuMakanan';
+$route['api/menu/minuman'] = 'api/MenuApi/MenuMinuman';
+$route['api/menu/buah'] = 'api/MenuApi/MenuBuah';
 
 #User Member API
 $route['api/member/id/(:any)'] = 'api/UserMemberApi/MemberById/$1';
 $route['api/member/create'] = 'api/UserMemberApi/Create';
 $route['api/member/login'] = 'api/UserMemberApi/Login';
+
+
+# Kerangjang API
+$route['api/keranjang/create'] = 'api/Keranjang/Create';
+$route['api/keranjang/delete/(:any)'] = 'api/Keranjang/DeleteKeranjang/$1';
+$route['api/keranjang/bymember/(:any)'] = 'api/Keranjang/Keranjang_byidmember/$1';
+$route['api/keranjang/byid/(:any)'] = 'api/Keranjang/UpdateKeranjang/$1';
+$route['api/keranjang/jmlbymember/(:any)'] = 'api/Keranjang/JmlByMember/$1';
+$route['api/keranjang/rpbymember/(:any)'] = 'api/Keranjang/RpByMember/$1';

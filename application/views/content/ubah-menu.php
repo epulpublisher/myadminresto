@@ -38,6 +38,7 @@
 										<option value="<?php echo $b['kategori']; ?>" selected="selected"><?php echo $b['kategori']; ?></option>
 										<option value="Makanan">Makanan</option>
 										<option value="Minuman">Minuman</option>
+										<option value="Buah-buahan">Buah-buahan</option>
 									</select>
 								</div>
 							</div>

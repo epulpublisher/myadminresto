@@ -103,6 +103,7 @@
     									<option value="">--Pilih Kategori--</option>
     									<option value="Makanan">Makanan</option>
     									<option value="Minuman">Minuman</option>
+    									<option value="Buah-buahan">Buah-buahan</option>
     								</select>
     							</div>
     							<div class="form-group">

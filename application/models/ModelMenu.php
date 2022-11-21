@@ -24,6 +24,30 @@ class ModelMenu extends CI_Model
 		return $query->result();
 	}
 
+	public function get_menu_makanan()
+	{
+		$kategori = "Makanan";
+		$this->db->where('kategori', $kategori);
+		$query = $this->db->get('menu');
+		return $query->result();
+	}
+
+	public function get_menu_minuman()
+	{
+		$kategori = "Minuman";
+		$this->db->where('kategori', $kategori);
+		$query = $this->db->get('menu');
+		return $query->result();
+	}
+
+	public function get_menu_buah()
+	{
+		$kategori = "Buah-buahan";
+		$this->db->where('kategori', $kategori);
+		$query = $this->db->get('menu');
+		return $query->result();
+	}
+
 	public function menuWhere($where)
 	{
 		return $this->db->get_where('menu', $where);
