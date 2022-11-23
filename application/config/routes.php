@@ -74,3 +74,9 @@ $route['api/keranjang/bymember/(:any)'] = 'api/Keranjang/Keranjang_byidmember/$1
 $route['api/keranjang/byid/(:any)'] = 'api/Keranjang/UpdateKeranjang/$1';
 $route['api/keranjang/jmlbymember/(:any)'] = 'api/Keranjang/JmlByMember/$1';
 $route['api/keranjang/rpbymember/(:any)'] = 'api/Keranjang/RpByMember/$1';
+
+
+$route['api/pesanan/create/(:any)'] = 'api/Pesanan/Create/$1';
+$route['api/pesanan/bykode/(:any)'] = 'api/Pesanan/Pesanan_byidkode/$1';
+
+$route['api/dtpesanan/bykode/(:any)'] = 'api/DTPesanan/DTPesanan_byidkode/$1';

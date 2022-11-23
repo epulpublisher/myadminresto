@@ -27,6 +27,14 @@ class Keranjang extends RestController
 		$this->response($resultkrj, 200);
 	}
 
+	public function Keranjang_byidmember_get($id_member)
+	{
+		$krj = new ModelKeranjang;
+		$resultkrj = $krj->get_keranjang_byidmember($id_member);
+		$this->response($resultkrj, 200);
+	}
+
+
 	public function Create_post()
 	{
 		$id_menu = $this->input->post('id_menu');
@@ -58,26 +66,13 @@ class Keranjang extends RestController
 		}
 	}
 
-	public function Keranjang_byidmember_get($id_member)
-	{
-		$krj = new ModelKeranjang;
-		$resultkrj = $krj->get_keranjang_byidmember(['id_member' => $id_member])->row_array();
-		if ($krj->get_keranjang_byidmember(['id_member' => $id_member])->num_rows() > 0) {
-			$this->response($resultkrj, RestController::HTTP_OK);
-		} else {
-			$this->response(null, RestController::HTTP_BAD_REQUEST);
-		}
-	}
-
 	public function UpdateKeranjang_post($id)
 	{
 		$krj = new ModelKeranjang;
-		$harga = $this->input->post('harga');
 		$qty = $this->input->post('qty');
-
+		$harga = $this->input->post('harga');
 		$total_harga = $harga * $qty;
 		$data = [
-			'harga' => $harga,
 			'qty' => $qty,
 			'total_harga' => $total_harga
 		];
