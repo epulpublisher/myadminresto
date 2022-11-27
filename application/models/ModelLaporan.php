@@ -29,22 +29,22 @@ class ModelLaporan extends CI_Model
 	}
 	public function Laporan_bestseller()
 	{
-		$this->db->select("nama_menu, COUNT(nama_menu) AS jumlah");
+		$this->db->select("nama_menu, SUM(qty) AS jumlah");
 		$this->db->from('detail_pesanan');
 		$this->db->where('pesanan.status_selesai', "Sudah Selesai");
 		$this->db->join('pesanan', 'detail_pesanan.kode_pesanan = pesanan.kode_pesanan');
 		$this->db->group_by("nama_menu");
-		$this->db->order_by("jumlah DESC");
+		$this->db->order_by("jumlah");
 		return $this->db->get();
 	}
 	public function Laporan_lowseller()
 	{
-		$this->db->select("nama_menu, COUNT(nama_menu) AS jumlah");
+		$this->db->select("nama_menu, COUNT(qty) AS jumlah");
 		$this->db->from('detail_pesanan');
 		$this->db->where('pesanan.status_selesai', "Sudah Selesai");
 		$this->db->join('pesanan', 'detail_pesanan.kode_pesanan = pesanan.kode_pesanan');
 		$this->db->group_by("nama_menu");
-		$this->db->order_by("jumlah ASC");
+		$this->db->order_by("jumlah");
 		return $this->db->get();
 	}
 }

@@ -6,6 +6,8 @@ class ModelMenu extends CI_Model
 	//manajemen menu
 	public function getMenu()
 	{
+		$promo = "Tidak";
+		$this->db->where('promo', $promo);
 		return $this->db->get('menu');
 	}
 
@@ -33,24 +35,24 @@ class ModelMenu extends CI_Model
 
 	public function get_menu_makanan()
 	{
-		$kategori = "Makanan";
-		$this->db->where('kategori', $kategori);
+		$array = array('kategori' => "Makanan", 'promo' => "Tidak");
+		$this->db->where($array);
 		$query = $this->db->get('menu');
 		return $query->result();
 	}
 
 	public function get_menu_minuman()
 	{
-		$kategori = "Minuman";
-		$this->db->where('kategori', $kategori);
+		$array = array('kategori' => "Minuman", 'promo' => "Tidak");
+		$this->db->where($array);
 		$query = $this->db->get('menu');
 		return $query->result();
 	}
 
 	public function get_menu_buah()
 	{
-		$kategori = "Buah-buahan";
-		$this->db->where('kategori', $kategori);
+		$array = array('kategori' => "Buah-buahan", 'promo' => "Tidak");
+		$this->db->where($array);
 		$query = $this->db->get('menu');
 		return $query->result();
 	}

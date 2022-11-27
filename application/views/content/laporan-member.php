@@ -30,7 +30,7 @@
     					<thead>
     						<tr>
     							<th>No.</th>
-    							<th>Jumlah Beli</th>
+    							<th>Banyak Memesan</th>
     							<th>Nama Member</th>
     							<th>No. Telepon</th>
     							<th>Alamat Email</th>
