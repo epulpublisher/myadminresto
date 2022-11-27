@@ -7,27 +7,20 @@ class Menu extends CI_Controller
 	{
 		parent::__construct();
 		cek_login();
+		format_rupiah();
 	}
 
-	//manajemen Menu
 	public function index()
 	{
 		$data['judul'] = 'Data Menu';
 		$data['user'] = $this->ModelUser->cekData(['id' => $this->session->userdata('id')])->row_array();
 		$data['menu'] = $this->ModelMenu->getMenu()->result_array();
-		$this->form_validation->set_rules('nama_menu', 'Nama Menu', 'required|min_length[3]', [
-			'required' => 'Nama menu harus diisi',
-			'min_length' => 'Nama menu terlalu pendek'
+		$this->form_validation->set_rules('harga', 'Harga', 'numeric', [
+			'numeric' => 'Tambah menu tidak berhasil, Harga harus angka!'
 		]);
-		$this->form_validation->set_rules('kategori', 'Kategori', 'required', [
-			'required' => 'Kategori harus dipilih',
+		$this->form_validation->set_rules('harga_promo', 'Harga Promo', 'numeric', [
+			'numeric' => 'Tambah menu tidak berhasil, Harga promo harus angka!'
 		]);
-		$this->form_validation->set_rules('harga', 'Harga', 'required|min_length[3]|numeric', [
-			'required' => 'Harga harus diisi',
-			'min_length' => 'Harga terlalu pendek',
-			'numeric' => 'Yang anda masukan bukan angka'
-		]);
-		//konfigurasi sebelum gambar diupload
 		$config['upload_path'] = './assets/img/upload/';
 		$config['allowed_types'] = 'jpg|png|jpeg';
 		$config['max_size'] = '3000';
@@ -58,7 +51,6 @@ class Menu extends CI_Controller
 				'promo' => $this->input->post('promo', true),
 				'harga_promo' => $this->input->post('harga_promo', true),
 				'status' => $this->input->post('status', true),
-				'terjual' => 0,
 				'image' => $gambar
 			];
 
@@ -70,7 +62,9 @@ class Menu extends CI_Controller
 	public function hapusMenu()
 	{
 		$where = ['id' => $this->uri->segment(3)];
+		$image = $this->uri->segment(4);
 		$this->ModelMenu->hapusMenu($where);
+		unlink('./assets/img/upload/' . $image);
 		redirect('menu');
 	}
 

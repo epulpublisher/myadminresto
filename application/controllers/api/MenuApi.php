@@ -18,6 +18,13 @@ class MenuApi extends RestController
 		$resultmenu = $menu->getMenu()->result_array();
 		$this->response($resultmenu, 200);
 	}
+	public function MenuTersedia_get()
+	{
+		$menu = new ModelMenu;
+		$status = "Tersedia";
+		$resultmenu = $menu->get_menu_bystatus($status);
+		$this->response($resultmenu, 200);
+	}
 	public function MenuById_get($id)
 	{
 		$menu = new ModelMenu;

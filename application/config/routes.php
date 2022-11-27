@@ -49,12 +49,13 @@ defined('BASEPATH') or exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'Autentifikasi';
+$route['default_controller'] = 'autentifikasi';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 # Menu API
 $route['api/menu'] = 'api/MenuApi/index';
+$route['api/menu/tersedia'] = 'api/MenuApi/MenuTersedia';
 $route['api/menu/id/(:any)'] = 'api/MenuApi/MenuById/$1';
 $route['api/menu/promo'] = 'api/MenuApi/MenuPromo';
 $route['api/menu/makanan'] = 'api/MenuApi/MenuMakanan';
@@ -63,6 +64,8 @@ $route['api/menu/buah'] = 'api/MenuApi/MenuBuah';
 
 #User Member API
 $route['api/member/id/(:any)'] = 'api/UserMemberApi/MemberById/$1';
+$route['api/member/update/(:any)'] = 'api/UserMemberApi/Update/$1';
+$route['api/member/update-password/(:any)'] = 'api/UserMemberApi/Update_password/$1';
 $route['api/member/create'] = 'api/UserMemberApi/Create';
 $route['api/member/login'] = 'api/UserMemberApi/Login';
 
@@ -75,8 +78,7 @@ $route['api/keranjang/byid/(:any)'] = 'api/Keranjang/UpdateKeranjang/$1';
 $route['api/keranjang/jmlbymember/(:any)'] = 'api/Keranjang/JmlByMember/$1';
 $route['api/keranjang/rpbymember/(:any)'] = 'api/Keranjang/RpByMember/$1';
 
-
+# Pesanan API
 $route['api/pesanan/create/(:any)'] = 'api/Pesanan/Create/$1';
 $route['api/pesanan/bykode/(:any)'] = 'api/Pesanan/Pesanan_byidkode/$1';
-
 $route['api/dtpesanan/bykode/(:any)'] = 'api/DTPesanan/DTPesanan_byidkode/$1';

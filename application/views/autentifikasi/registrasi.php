@@ -8,8 +8,8 @@
 
 	<!-- Site favicon -->
 	<link rel="apple-touch-icon" sizes="180x180" href="<?= base_url() ?>/assets/vendors/images/apple-touch-icon.png" />
-	<link rel="icon" type="image/png" sizes="32x32" href="<?= base_url() ?>/assets/vendors/images/favicon-32x32.png" />
-	<link rel="icon" type="image/png" sizes="16x16" href="<?= base_url() ?>/assets/vendors/images/favicon-16x16.png" />
+	<link rel="icon" type="image/png" sizes="32x32" href="<?= base_url() ?>/assets/vendors/images/fav.png" />
+	<link rel="icon" type="image/png" sizes="16x16" href="<?= base_url() ?>/assets/vendors/images/fav.png" />
 
 	<!-- Mobile Specific Metas -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -44,9 +44,7 @@
 				<div class="col-md-6 col-lg-5">
 					<div class="login-box bg-light box-shadow border-radius-10">
 						<div class="center mx-auto">
-							<a href=" http://lixa.id/">
-								<center><img alt="Responsive image" style="width:110px;height:50px;" src="<?= base_url() ?>/assets/vendors/images/lti-logo.png" alt=""></center>
-							</a>
+							<center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img alt="Responsive image" style="width:220px;height:100px; align=center;" src="<?= base_url() ?>/assets/vendors/images/logo-resto.png" alt=""></center>
 							<br>
 						</div>
 						<div class="login-title">
@@ -66,7 +64,7 @@
 									<h6><label class="text-dark"><b><i>NIP</i></b></label></h6>
 								</center>
 								<input type="text" autocomplete="off" autocorrect="off" name="nip" id="nip" class="form-control form-control-user bg-transparent border border-dark" value="<?= set_value('nip') ?>" required>
-								<?= form_error('nama', '<small class="text-danger pl-3">', '</small>'); ?>
+								<?= form_error('nip', '<small class="text-danger pl-3">', '</small>'); ?>
 							</div>
 							<div class="mb-3">
 								<center>

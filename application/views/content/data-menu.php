@@ -10,7 +10,7 @@
     				<div class="col-md-6 col-sm-12 text-right">
     					<div class="dropdown">
     						<a class="btn btn-primary dropdown-toggle" href="#" role="button" data-toggle="dropdown">
-    							Alat
+    							Aksi
     						</a>
     						<div class="dropdown-menu dropdown-menu-right">
     							<a class="dropdown-item" data-toggle="modal" data-target="#menuBaruModal">Tambah Menu</a>
@@ -38,7 +38,6 @@
     							<th>Nama Menu</th>
     							<th>Kategori</th>
     							<th>Status</th>
-    							<th>Terjual</th>
     							<th>Gambar</th>
     							<th>Alat</th>
     							<th>Harga</th>
@@ -55,7 +54,6 @@
     								<td><?php echo $a['nama_menu']; ?></td>
     								<td><?php echo $a['kategori']; ?></td>
     								<td><?php echo $a['status']; ?></td>
-    								<td><?php echo $a['terjual']; ?></td>
     								<td>
     									<picture>
     										<source srcset="" type="image/svg+xml">
@@ -69,13 +67,13 @@
     										</a>
     										<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
     											<a class="dropdown-item" href="<?= base_url('menu/ubahmenu/') . $a['id']; ?>" class="badge badge-info"><i class=" dw dw-edit2"></i> Ubah</a>
-    											<a class="dropdown-item" href="<?= base_url('menu/hapusmenu/') . $a['id']; ?>" onclick="return confirm('Kamu yakin akan menghapus <?= $judul . ' ' . $a['nama_menu']; ?> ?');" class="badge badge-danger"><i class="dw dw-delete-3"></i> Hapus</a>
+    											<a class="dropdown-item tombol-hapus" href="<?= base_url('menu/hapusmenu/') . $a['id']; ?>/<?php echo $a['image']; ?>"><i class="dw dw-delete-3"></i> Hapus</a>
     										</div>
     									</div>
     								</td>
-    								<td>Rp.<?php echo $a['harga']; ?></td>
+    								<td><?php echo rupiah($a['harga']); ?></td>
     								<td><?php echo $a['promo']; ?></td>
-    								<td>Rp.<?php echo $a['harga_promo']; ?></td>
+    								<td><?php echo rupiah($a['harga_promo']); ?></td>
     							</tr>
     						<?php endforeach; ?>
     					</tbody>
@@ -96,10 +94,10 @@
     					<form action="<?= base_url('menu/index'); ?>" method="post" enctype="multipart/form-data">
     						<div class="modal-body">
     							<div class="form-group">
-    								<input type="text" class="form-control form-control-user" id="nama_menu" name="nama_menu" placeholder="Masukkan Nama Menu">
+    								<input type="text" class="form-control form-control-user" id="nama_menu" name="nama_menu" placeholder="Masukkan Nama Menu" required>
     							</div>
     							<div class="form-group">
-    								<select name="kategori" class="form-control form-control-user">
+    								<select name="kategori" class="form-control form-control-user" required>
     									<option value="">--Pilih Kategori--</option>
     									<option value="Makanan">Makanan</option>
     									<option value="Minuman">Minuman</option>
@@ -107,10 +105,11 @@
     								</select>
     							</div>
     							<div class="form-group">
-    								<input type="text" class="form-control form-control-user" id="harga" name="harga" placeholder="Masukkan Harga">
+    								<input type="text" class="form-control form-control-user" id="harga" name="harga" placeholder="Masukkan Harga" required>
+    								<?= form_error('tlp', '<p class="text-danger pl-3">', '</p>'); ?>
     							</div>
     							<div class="form-group">
-    								<select name="promo" class="form-control form-control-user">
+    								<select name="promo" class="form-control form-control-user" required>
     									<option value="">--Promo--</option>
     									<option value="Ya">Ya</option>
     									<option value="Tidak">Tidak</option>
@@ -118,16 +117,17 @@
     							</div>
     							<div class="form-group">
     								<input type="text" class="form-control form-control-user" id="harga_promo" name="harga_promo" placeholder="Masukkan Harga Promo">
+    								<?= form_error('tlp', '<p class="text-danger pl-3">', '</p>'); ?>
     							</div>
     							<div class="form-group">
-    								<select name="status" class="form-control form-control-user">
+    								<select name="status" class="form-control form-control-user" required>
     									<option value="">--Pilih Status--</option>
     									<option value="Tersedia">Tersedia</option>
     									<option value="Habis">Habis</option>
     								</select>
     							</div>
     							<div class="form-group">
-    								<input type="file" class="form-control form-control-user" id="image" name="image">
+    								<input type="file" class="form-control form-control-user" id="image" name="image" required>
     							</div>
     						</div>
     						<div class="modal-footer">

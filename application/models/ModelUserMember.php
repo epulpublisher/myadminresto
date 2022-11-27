@@ -22,4 +22,17 @@ class ModelUserMember extends CI_Model
 	{
 		return $this->db->get_where('member', $where);
 	}
+	public function getUserWhere($where = null)
+	{
+		return $this->db->get_where('user', $where);
+	}
+	public function AllMember()
+	{
+		return $this->db->count_all_results('member');
+	}
+	public function update_member($id, $data)
+	{
+		$this->db->where('id', $id);
+		return $this->db->update('member', $data);
+	}
 }

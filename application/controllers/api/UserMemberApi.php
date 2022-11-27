@@ -22,11 +22,11 @@ class UserMemberApi extends RestController
 	{
 		$member = new ModelUserMember;
 		$data = [
-			'nama' => $this->input->post('nama'),
-			'tlp' => $this->input->post('tlp'),
-			'email' => $this->input->post('email'),
-			'alamat' => $this->input->post('alamat'),
-			'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT)
+			'nama' => $this->post('nama'),
+			'tlp' => $this->post('tlp'),
+			'email' => $this->post('email'),
+			'alamat' => $this->post('alamat'),
+			'password' => password_hash($this->post('password'), PASSWORD_DEFAULT)
 		];
 		$addmember = $member->post_member($data);
 		if ($addmember > 0) {
@@ -51,12 +51,66 @@ class UserMemberApi extends RestController
 	{
 		$member = new ModelUserMember;
 		$email = htmlspecialchars($this->post('email'));
-		$password = $this->input->post('password', true);
+		$password = $this->post('password', true);
 		$user_member = $member->cekData(['email' => $email])->row_array();
 		if (($member->cekData(['email' => $email])->num_rows() > 0) && (password_verify($password, $user_member['password']))) {
 			$this->response($user_member, RestController::HTTP_OK);
 		} else {
 			$this->response(null, RestController::HTTP_UNAUTHORIZED);
+		}
+	}
+	public function Update_put($id)
+	{
+		$member = new ModelUserMember;
+		$data = [
+			'nama' => $this->put('nama'),
+			'tlp' => $this->put('tlp'),
+			'email' => $this->put('email'),
+			'alamat' => $this->put('alamat'),
+		];
+		$upd = $member->update_member($id, $data);
+		if ($upd > 0) {
+			$this->response(
+				[
+					'status' => true,
+					'pesan' => 'update berhasil'
+				],
+				RestController::HTTP_OK
+			);
+		} else {
+			$this->response(
+				[
+					'status' => false,
+					'pesan' => 'update gagal'
+				],
+				RestController::HTTP_BAD_REQUEST
+			);
+		}
+	}
+
+	public function Update_password_put($id)
+	{
+		$member = new ModelUserMember;
+		$data = [
+			'password' => password_hash($this->put('pwd_baru'), PASSWORD_DEFAULT)
+		];
+		$upd = $member->update_member($id, $data);
+		if ($upd > 0) {
+			$this->response(
+				[
+					'status' => true,
+					'pesan' => 'update berhasil'
+				],
+				RestController::HTTP_OK
+			);
+		} else {
+			$this->response(
+				[
+					'status' => false,
+					'pesan' => 'update gagal'
+				],
+				RestController::HTTP_BAD_REQUEST
+			);
 		}
 	}
 }

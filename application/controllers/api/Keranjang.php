@@ -44,33 +44,46 @@ class Keranjang extends RestController
 		$member = new ModelUserMember;
 		$resultmenu = $menu->get_menu_byid($id_menu);
 		$resultmember = $member->get_member_byid($id_member);
-		$data = [
-			'id_member' => 	$resultmember->id,
-			'id_menu' => $resultmenu->id,
-			'nama_menu' => $resultmenu->nama_menu,
-			'image' => $resultmenu->image,
-			'harga' => $resultmenu->harga,
-			'qty' => 1,
-			'total_harga' => $resultmenu->harga,
-		];
-		if ($krj->cek_keranjang_byidmenu($id_menu) >= 1) {
+		$cekpromo = $resultmenu->promo;
+		if ($cekpromo == "Ya") {
+			$data = [
+				'id_member' => 	$resultmember->id,
+				'id_menu' => $resultmenu->id,
+				'nama_menu' => $resultmenu->nama_menu,
+				'image' => $resultmenu->image,
+				'harga' => $resultmenu->harga_promo,
+				'qty' => 1,
+				'total_harga' => $resultmenu->harga_promo,
+			];
+		} else {
+			$data = [
+				'id_member' => 	$resultmember->id,
+				'id_menu' => $resultmenu->id,
+				'nama_menu' => $resultmenu->nama_menu,
+				'image' => $resultmenu->image,
+				'harga' => $resultmenu->harga,
+				'qty' => 1,
+				'total_harga' => $resultmenu->harga,
+			];
+		};
+		if ($krj->cek_keranjang_byid($id_menu, $id_member) >= 1) {
 			$this->response(null, RestController::HTTP_UNAUTHORIZED);
 		} else {
 			$addkrj = $krj->post_keranjang($data);
-			$resultkeranjang = $krj->get_keranjang_byidmember($id_member);
+			$response = "OK";
 			if ($addkrj > 0) {
-				$this->response($resultkeranjang, RestController::HTTP_OK);
+				$this->response($response, RestController::HTTP_OK);
 			} else {
 				$this->response(null, RestController::HTTP_UNAUTHORIZED);
 			}
 		}
 	}
 
-	public function UpdateKeranjang_post($id)
+	public function UpdateKeranjang_put($id)
 	{
 		$krj = new ModelKeranjang;
-		$qty = $this->input->post('qty');
-		$harga = $this->input->post('harga');
+		$qty = $this->put('qty');
+		$harga = $this->put('harga');
 		$total_harga = $harga * $qty;
 		$data = [
 			'qty' => $qty,

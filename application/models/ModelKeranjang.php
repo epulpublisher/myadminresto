@@ -48,17 +48,10 @@ class ModelKeranjang extends CI_Model
 		}
 	}
 
-
-
-
-
-
-
 	public function post_keranjang($data)
 	{
 		return $this->db->insert('keranjang', $data);
 	}
-
 
 	public function cek_keranjang_byidmenu($id_menu)
 	{
@@ -66,9 +59,11 @@ class ModelKeranjang extends CI_Model
 		$query = $this->db->get('keranjang');
 		return $query->num_rows();
 	}
-	public function cek_keranjang_byid($id_menu)
+
+	public function cek_keranjang_byid($id_menu, $id_member)
 	{
-		$this->db->where('id_menu', $id_menu);
+		$array = array('id_menu' => $id_menu, 'id_member' => $id_member);
+		$this->db->where($array);
 		$query = $this->db->get('keranjang');
 		return $query->num_rows();
 	}

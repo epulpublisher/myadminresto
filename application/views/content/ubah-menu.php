@@ -44,7 +44,7 @@
 							</div>
 							<div class="form-group">
 								<div class="col-sm-12 col-md-10">
-									<label class="col-sm-12 col-md-2 col-form-label">Harga (Rp)</label>
+									<label class="col-sm-12 col-md-2 col-form-label">Harga(Rp)</label>
 									<input type="text" class="form-control form-control-user" id="harga" name="harga" placeholder="Masukkan Harga" value="<?= $b['harga']; ?>">
 								</div>
 							</div>
@@ -60,7 +60,7 @@
 							</div>
 							<div class="form-group">
 								<div class="col-sm-12 col-md-10">
-									<label class="col-sm-12 col-md-2 col-form-label">Harga Promo (Rp)</label>
+									<label class="col-sm-12 col-md-2 col-form-label">Harga Promo(Rp)</label>
 									<input type="text" class="form-control form-control-user" id="harga_promo" name="harga_promo" placeholder="Masukkan Harga" value="<?= $b['harga_promo']; ?>">
 								</div>
 							</div>

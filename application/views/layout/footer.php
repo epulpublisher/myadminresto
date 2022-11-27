@@ -21,6 +21,8 @@
 <script src="<?= base_url() ?>assets/src/plugins/datatables/js/vfs_fonts.js"></script>
 <!-- Datatable Setting js -->
 <script src="<?= base_url() ?>assets/vendors/scripts/datatable-setting.js"></script>
+<script src="<?= base_url(); ?>assets/src/scripts/sweetalert2.all.min.js"></script>
+<script src="<?= base_url(); ?>assets/src/scripts/alert-script.js"></script>
 <script>
 	$(document).ready(function() {
 		$('#table').DataTable();
