@@ -55,7 +55,6 @@ $route['translate_uri_dashes'] = FALSE;
 
 # Menu API
 $route['api/menu'] = 'api/MenuApi/index';
-$route['api/menu/tersedia'] = 'api/MenuApi/MenuTersedia';
 $route['api/menu/id/(:any)'] = 'api/MenuApi/MenuById/$1';
 $route['api/menu/promo'] = 'api/MenuApi/MenuPromo';
 $route['api/menu/makanan'] = 'api/MenuApi/MenuMakanan';

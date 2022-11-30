@@ -18,13 +18,6 @@ class ModelMenu extends CI_Model
 		return $query->row();
 	}
 
-	public function get_menu_bystatus($status)
-	{
-		$this->db->where('status', $status);
-		$query = $this->db->get('menu');
-		return $query->row();
-	}
-
 	public function get_menu_promo()
 	{
 		$promo = "Ya";
