@@ -3,6 +3,11 @@
 </div>
 </div>
 <!-- js -->
+<!-- js -->
+<script src="<?= base_url() ?>assets/src/plugins/jquery-asColor/dist/jquery-asColor.js"></script>
+<script src="<?= base_url() ?>assets/src/plugins/jquery-asGradient/dist/jquery-asGradient.js"></script>
+<script src="<?= base_url() ?>assets/src/plugins/jquery-asColorPicker/jquery-asColorPicker.js"></script>
+<script src="<?= base_url() ?>assets/vendors/scripts/colorpicker.js"></script>
 <script src="<?= base_url() ?>assets/vendors/scripts/core.js"></script>
 <script src="<?= base_url() ?>assets/vendors/scripts/script.min.js"></script>
 <script src="<?= base_url() ?>assets/vendors/scripts/process.js"></script>

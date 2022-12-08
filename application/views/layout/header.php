@@ -22,6 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="<?= base_url() ?>/assets/src/plugins/datatables/css/dataTables.bootstrap4.min.css" />
 	<link rel="stylesheet" type="text/css" href="<?= base_url() ?>/assets/src/plugins/datatables/css/responsive.bootstrap4.min.css" />
 	<link rel="stylesheet" type="text/css" href="<?= base_url() ?>/assets/vendors/styles/style.css" />
+	<link rel="stylesheet" type="text/css" href="<?= base_url() ?>/src/plugins/jquery-asColorPicker/dist/css/asColorPicker.css" />
 </head>
 
 <body>

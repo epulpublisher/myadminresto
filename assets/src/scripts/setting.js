@@ -197,6 +197,7 @@ jQuery(document).ready(function () {
 		range: true,
 		multipleDates: true,
 		multipleDatesSeparator: " - ",
+		dateFormat: "dd/mm/yyy",
 	});
 	$(".month-picker").datepicker({
 		language: "en",

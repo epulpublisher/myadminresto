@@ -13,9 +13,18 @@
     							Aksi
     						</a>
     						<div class="dropdown-menu dropdown-menu-right">
-    							<a class="dropdown-item" href="<?= base_url() ?>laporan/penjualan_print"><i class="bi bi-printer-fill"></i> Print</a>
-    							<a class="dropdown-item" href="<?= base_url() ?>laporan/penjualan_pdf"><i class="bi bi-file-earmark-pdf-fill"></i> Export ke PDF</a>
-    							<a class="dropdown-item" href="<?= base_url() ?>laporan/penjualan_excel"><i class="bi bi-file-earmark-spreadsheet-fill"></i> Export ke Excel</a>
+    							<form action="<?= base_url('laporan/penjualan_print'); ?>" method="post">
+    								<input type="hidden" name="date_filter" value="<?= $date_filter ?>">
+    								<a class="dropdown-item"><button class="bi bi-printer-fill btn btn-success btn-sm" type="submit" value="Submit" style="border:none;width: 100%;"> Print &nbsp;&nbsp;&nbsp;&nbsp;</button></a>
+    							</form>
+    							<form action="<?= base_url('laporan/penjualan_pdf'); ?>" method="post">
+    								<input type="hidden" name="date_filter" value="<?= $date_filter ?>">
+    								<a class="dropdown-item"><button class="bi bi-file-earmark-pdf-fill btn btn-danger btn-sm" type="submit" value="Submit" style="border:none;width: 100%;"> Export ke PDF</button></a>
+    							</form>
+    							<form action="<?= base_url('laporan/penjualan_excel'); ?>" method="post">
+    								<input type="hidden" name="date_filter" value="<?= $date_filter ?>">
+    								<a class="dropdown-item"><button class="bi bi-file-earmark-spreadsheet-fill btn btn-warning btn-sm" type="submit" value="Submit" style="border:none;width: 100%;"> Export ke Excel</button></a>
+    							</form>
     						</div>
     					</div>
     				</div>
@@ -23,6 +32,17 @@
     		</div>
 
     		<div class="card-box pb-10">
+    			<div class="card-body">
+    				<div class="col-md-4 col-sm-12">
+    					<form action="<?= base_url('laporan/penjualan'); ?>" method="post">
+    						<div class="form-group">
+    							<label>Filter Data Berdasarkan Tanggal/Range Tanggal</label>
+    							<input value="<?= $date_filter ?>" class="form-control datetimepicker-range" name="date_filter" placeholder="Klik disini untuk pilih tanggal/range tanggal" type="text" autocomplete='off' spellcheck='false' autocorrect='off'>
+    							<button type="submit" class="btn btn-primary">Filter</button>
+    						</div>
+    					</form>
+    				</div>
+    			</div>
     			<div class="pd-10">
     				<br>
     				<center><b> Total Penghasilan : <?= rupiah($total_penghasilan['total_penghasilan']); ?> </b></center>

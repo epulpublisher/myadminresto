@@ -28,13 +28,18 @@ header("Expires: 0");
 		font-size: 11pt;
 	}
 </style>
-<h3>
-	<center>Laporan Member Bina Saran Resto</center>
-</h3>
+<h4>
+	<center><b><u>LAPORAN MEMBER BINA SARANA RESTO</u></b></center>
+</h4>
+<h4>
+	<center>Periode : <?= $date_filter ?></center>
+</h4>
 <br>
 <right>
-	<h4>Dibuat tanggal : <?php $today = date("d F Y g:i A");
-							echo $today ?></h4>
+	<h4>Dibuat tanggal : <?php
+							date_default_timezone_set('Asia/Jakarta');
+							$today = date("d/m/Y G:i:s");
+							echo $today; ?> WIB</h4>
 </right>
 <br />
 <table class=" table-data">
@@ -59,7 +64,9 @@ header("Expires: 0");
 				<td><?php echo $a['nama']; ?></td>
 				<td><?php echo $a['tlp']; ?></td>
 				<td><?php echo $a['email']; ?></td>
-				<td><?php echo $a['tanggal_daftar']; ?></td>
+				<td><?php
+					$date_c = date_create($a['tanggal_daftar']);
+					echo (date_format($date_c, "d/m/Y")); ?></td>
 				<td><?php echo $a['alamat']; ?></td>
 			</tr>
 		<?php endforeach; ?>

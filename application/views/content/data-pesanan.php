@@ -18,6 +18,7 @@
     					<thead>
     						<tr>
     							<th>No.</th>
+    							<th>Tanggal</th>
     							<th>Kode Pesanan</th>
     							<th>Nama Member</th>
     							<th>No. Telepon</th>
@@ -34,6 +35,9 @@
 							foreach ($menu as $a) : ?>
     							<tr>
     								<th><?= $b++; ?></th>
+    								<td><?php
+										$date_c = date_create($a['tgl_pesanan']);
+										echo (date_format($date_c, "d/m/Y")); ?></td>
     								<td><?php echo $a['kode_pesanan']; ?></td>
     								<td><?php echo $a['nama_member']; ?></td>
     								<td><?php echo $a['tlp']; ?></td>
@@ -50,7 +54,6 @@
     											<a class="dropdown-item" href="<?= base_url() ?>pesanan/invoice/<?php echo $a['kode_pesanan']; ?>/<?php echo $a['id_member']; ?>" class="badge badge-info"><i class=" dw dw-eye"></i>Detail</a>
     											<a class="dropdown-item" id="btn-bayar" href="<?= base_url('pesanan/status_bayar/') . $a['id']; ?>"><i class=" dw dw-edit2"></i>Update Sudah Bayar</a>
     											<a class="dropdown-item" id="btn-selesai" href="<?= base_url('pesanan/status_selesai/') . $a['id']; ?>"><i class="dw dw-edit2"></i>Update Sudah Selesai</a>
-    											<a class="dropdown-item tombol-hapus" href="<?= base_url('pesanan/hapus/') . $a['kode_pesanan']; ?>"><i class=" dw dw-delete-3"></i>Hapus Pesanan</a>
     										</div>
     									</div>
     								</td>

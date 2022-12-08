@@ -4,8 +4,8 @@ const dataUser = $('.user-data').data('user');
 if (flashData == 1) {
 	Swal.fire({
 		icon: 'error',
-		title: 'Kesalahan',
-		text: 'Kata sandi sekarang tidak benar',
+		title: 'Kesalahan - Menu tidak berhasil ditambahkan',
+		text: 'File gambar tidak valid. Gambar harus berukuran maksimal 300KB, Size Lebar : 1024px x Tinggi: 1000px',
 		confirmButtonColor: '#7fad39',
 		confirmButtonText: 'Tutup',
 	});
@@ -35,24 +35,25 @@ if (flashData == 1) {
 	});
 } else if (flashData == 5) {
 	Swal.fire({
-		title: 'Selamat Datang ' + dataUser,
-		text: 'Silahkan memilih dan memesan menu. Terimakasih :)',
-		showConfirmButton: false,
-		showCloseButton: true,
+		icon: 'success',
+		title: 'Selamat',
+		text: 'Menu Berhasil Diupdate',
+		confirmButtonColor: '#7fad39',
+		confirmButtonText: 'Ya',
 	});
 } else if (flashData == 6) {
 	Swal.fire({
 		icon: 'success',
 		title: 'Selamat',
-		text: 'Anda berhasil membuat akun. silahkan anda bisa masuk menggunakan akun yang dibuat.',
+		text: 'Menu Berhasil Ditambahkan',
 		confirmButtonColor: '#7fad39',
 		confirmButtonText: 'Ya',
 	});
 } else if (flashData == 7) {
 	Swal.fire({
 		icon: 'error',
-		title: 'Kesalahan',
-		text: 'Mohon Maaf menu yang anda pilih sudah ada dikeranjang. Silahkan pilih menu yang lain',
+		title: 'Kesalahan - Menu tidak berhasil diupdate',
+		text: 'File gambar tidak valid. Gambar harus berukuran maksimal 300KB, Size Lebar : 1024px x Tinggi: 1000px',
 		confirmButtonColor: '#7fad39',
 		confirmButtonText: 'Tutup',
 	});

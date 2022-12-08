@@ -30,13 +30,18 @@
 			font-size: 11pt;
 		}
 	</style>
-	<h3>
-		<center>Laporan Penjualan Bina Saran Resto</center>
-	</h3>
+	<h4>
+		<center><b><u>LAPORAN PENJUALAN BINA SARANA RESTO</u></b></center>
+	</h4>
+	<h4>
+		<center>Periode : <?= $date_filter ?></center>
+	</h4>
 	<br>
 	<right>
-		<h4>Dibuat tanggal : <?php $today = date("d F Y g:i A");
-								echo $today ?></h4>
+		<h4>Dibuat tanggal : <?php
+								date_default_timezone_set('Asia/Jakarta');
+								$today = date("d/m/Y G:i:s");
+								echo $today; ?> WIB</h4>
 	</right>
 	<br />
 	<table class=" table-data">
